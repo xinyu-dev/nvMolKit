@@ -7,3 +7,4 @@ SubstructMatchResults
 
 .. autoclass:: SubstructMatchResults
    :members:
+   :inherited-members:

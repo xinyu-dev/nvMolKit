@@ -7,3 +7,4 @@ HardwareOptions
 
 .. autoclass:: HardwareOptions
    :members:
+   :inherited-members:

@@ -7,3 +7,4 @@ AsyncGpuResult
 
 .. autoclass:: AsyncGpuResult
    :members:
+   :inherited-members:

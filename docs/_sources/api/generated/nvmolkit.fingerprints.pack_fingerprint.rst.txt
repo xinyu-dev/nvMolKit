@@ -7,3 +7,4 @@ pack\_fingerprint
 
 .. autoclass:: pack_fingerprint
    :members:
+   :inherited-members:

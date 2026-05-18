@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/nvidia-sphinx-theme.css?v=df3ac72c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css?v=572af1d6" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=6c02275b"></script>
+    <script src="../../_static/documentation_options.js?v=1dd76d02"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/thebelab-helper.js"></script>
@@ -56,11 +56,11 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="HardwareOptions" href="nvmolkit.types.HardwareOptions.html" />
-    <link rel="prev" title="SubstructMatchResults" href="nvmolkit.substructure.SubstructMatchResults.html" />
+    <link rel="prev" title="GetTFDMatrices" href="nvmolkit.tfd.GetTFDMatrices.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.0" />
+  <meta name="docsearch:version" content="0.5.0" />
 
 
   </head>
@@ -255,6 +255,9 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../similarity.html">Molecular similarity on GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../forcefield.html">Force field optimization on GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../autotune.html">Hardware autotuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../agent_skill.html">Cursor / agent skill</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../nvmolkit.html">nvMolKit APIs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -267,14 +270,32 @@
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.similarity.crossCosineSimilarityMemoryConstrained.html">crossCosineSimilarityMemoryConstrained</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.embedMolecules.EmbedMolecules.html">EmbedMolecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs.html">MMFFOptimizeMoleculesConfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.batchedForcefield.MMFFBatchedForcefield.html">MMFFBatchedForcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.batchedForcefield.MMFFBatchElement.html">MMFFBatchElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.uffOptimization.UFFOptimizeMoleculesConfs.html">UFFOptimizeMoleculesConfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.batchedForcefield.UFFBatchedForcefield.html">UFFBatchedForcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.batchedForcefield.UFFBatchElement.html">UFFBatchElement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.clustering.butina.html">butina</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.substructure.hasSubstructMatch.html">hasSubstructMatch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.substructure.countSubstructMatches.html">countSubstructMatches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.substructure.getSubstructMatches.html">getSubstructMatches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.substructure.SubstructSearchConfig.html">SubstructSearchConfig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.substructure.SubstructMatchResults.html">SubstructMatchResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.conformerRmsd.GetConformerRMSMatrix.html">GetConformerRMSMatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.conformerRmsd.GetConformerRMSMatrixBatch.html">GetConformerRMSMatrixBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.tfd.GetTFDMatrix.html">GetTFDMatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.tfd.GetTFDMatrices.html">GetTFDMatrices</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">AsyncGpuResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvmolkit.types.HardwareOptions.html">HardwareOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.is_available.html">is_available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.tune_embed_molecules.html">tune_embed_molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.tune_mmff_optimize.html">tune_mmff_optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.tune_uff_optimize.html">tune_uff_optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.tune_batched_forcefield.html">tune_batched_forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.tune_substructure.html">tune_substructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.save.html">save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.load.html">load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvmolkit.autotune.TuneResult.html">TuneResult</a></li>
 </ul>
 </details></li>
 </ul>
@@ -338,14 +359,23 @@
 <h1>AsyncGpuResult<a class="headerlink" href="#asyncgpuresult" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="nvmolkit.types.AsyncGpuResult">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nvmolkit.types.</span></span><span class="sig-name descname"><span class="pre">AsyncGpuResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nvmolkit.types.AsyncGpuResult" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nvmolkit.types.</span></span><span class="sig-name descname"><span class="pre">AsyncGpuResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nvmolkit.types.AsyncGpuResult" title="Link to this definition">#</a></dt>
 <dd><p>Handle to a GPU result.</p>
 <p>Populates the <code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code> attribute which can be consumed by other libraries. Note that
 this result is async, and the data cannot be accessed without a sync, such as <code class="docutils literal notranslate"><span class="pre">torch.cuda.synchronize()</span></code>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nvmolkit.types.AsyncGpuResult.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nvmolkit.types.AsyncGpuResult.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nvmolkit.types.AsyncGpuResult.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Internal construction of the AsyncGpuResult object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – An object exposing <code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code>.</p></li>
+<li><p><strong>gpu_id</strong> – Optional GPU device id where the underlying buffer lives. If omitted, torch
+infers the device from the CUDA pointer attributes (typically the current device).</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -381,12 +411,12 @@ this result is async, and the data cannot be accessed without a sync, such as <c
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nvmolkit.substructure.SubstructMatchResults.html"
+       href="nvmolkit.tfd.GetTFDMatrices.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SubstructMatchResults</p>
+        <p class="prev-next-title">GetTFDMatrices</p>
       </div>
     </a>
     <a class="right-next"

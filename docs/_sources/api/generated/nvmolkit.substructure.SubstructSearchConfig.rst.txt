@@ -7,3 +7,4 @@ SubstructSearchConfig
 
 .. autoclass:: SubstructSearchConfig
    :members:
+   :inherited-members:

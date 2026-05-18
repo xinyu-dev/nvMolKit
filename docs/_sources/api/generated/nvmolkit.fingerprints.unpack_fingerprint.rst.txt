@@ -7,3 +7,4 @@ unpack\_fingerprint
 
 .. autoclass:: unpack_fingerprint
    :members:
+   :inherited-members:

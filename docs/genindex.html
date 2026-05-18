@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/nvidia-sphinx-theme.css?v=df3ac72c" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
     <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
   
@@ -42,7 +42,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=6c02275b"></script>
+    <script src="_static/documentation_options.js?v=1dd76d02"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/thebelab-helper.js"></script>
@@ -57,7 +57,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.0" />
+  <meta name="docsearch:version" content="0.5.0" />
 
 
   </head>
@@ -248,6 +248,9 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="similarity.html">Molecular similarity on GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forcefield.html">Force field optimization on GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autotune.html">Hardware autotuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_skill.html">Cursor / agent skill</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="api/nvmolkit.html">nvMolKit APIs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -260,14 +263,32 @@
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.similarity.crossCosineSimilarityMemoryConstrained.html">crossCosineSimilarityMemoryConstrained</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.embedMolecules.EmbedMolecules.html">EmbedMolecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs.html">MMFFOptimizeMoleculesConfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html">MMFFBatchedForcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html">MMFFBatchElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.uffOptimization.UFFOptimizeMoleculesConfs.html">UFFOptimizeMoleculesConfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html">UFFBatchedForcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html">UFFBatchElement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.clustering.butina.html">butina</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.substructure.hasSubstructMatch.html">hasSubstructMatch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.substructure.countSubstructMatches.html">countSubstructMatches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.substructure.getSubstructMatches.html">getSubstructMatches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html">SubstructSearchConfig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.substructure.SubstructMatchResults.html">SubstructMatchResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.conformerRmsd.GetConformerRMSMatrix.html">GetConformerRMSMatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.conformerRmsd.GetConformerRMSMatrixBatch.html">GetConformerRMSMatrixBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.tfd.GetTFDMatrix.html">GetTFDMatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.tfd.GetTFDMatrices.html">GetTFDMatrices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.types.AsyncGpuResult.html">AsyncGpuResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.types.HardwareOptions.html">HardwareOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.is_available.html">is_available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.tune_embed_molecules.html">tune_embed_molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.tune_mmff_optimize.html">tune_mmff_optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.tune_uff_optimize.html">tune_uff_optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.tune_batched_forcefield.html">tune_batched_forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.tune_substructure.html">tune_substructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.save.html">save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.load.html">load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/nvmolkit.autotune.TuneResult.html">TuneResult</a></li>
 </ul>
 </details></li>
 </ul>
@@ -310,11 +331,15 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
@@ -324,9 +349,13 @@
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/generated/nvmolkit.fingerprints.MorganFingerprintGenerator.html#nvmolkit.fingerprints.MorganFingerprintGenerator.__init__">__init__() (nvmolkit.fingerprints.MorganFingerprintGenerator method)</a>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield.__init__">__init__() (nvmolkit.batchedForcefield.MMFFBatchedForcefield method)</a>
 
       <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield.__init__">(nvmolkit.batchedForcefield.UFFBatchedForcefield method)</a>
+</li>
+        <li><a href="api/generated/nvmolkit.fingerprints.MorganFingerprintGenerator.html#nvmolkit.fingerprints.MorganFingerprintGenerator.__init__">(nvmolkit.fingerprints.MorganFingerprintGenerator method)</a>
+</li>
         <li><a href="api/generated/nvmolkit.types.AsyncGpuResult.html#nvmolkit.types.AsyncGpuResult.__init__">(nvmolkit.types.AsyncGpuResult method)</a>
 </li>
       </ul></li>
@@ -336,6 +365,32 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement.add_angle_constraint">add_angle_constraint() (nvmolkit.batchedForcefield.MMFFBatchElement method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement.add_angle_constraint">(nvmolkit.batchedForcefield.UFFBatchElement method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement.add_distance_constraint">add_distance_constraint() (nvmolkit.batchedForcefield.MMFFBatchElement method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement.add_distance_constraint">(nvmolkit.batchedForcefield.UFFBatchElement method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement.add_position_constraint">add_position_constraint() (nvmolkit.batchedForcefield.MMFFBatchElement method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement.add_position_constraint">(nvmolkit.batchedForcefield.UFFBatchElement method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement.add_torsion_constraint">add_torsion_constraint() (nvmolkit.batchedForcefield.MMFFBatchElement method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement.add_torsion_constraint">(nvmolkit.batchedForcefield.UFFBatchElement method)</a>
+</li>
+      </ul></li>
       <li><a href="api/generated/nvmolkit.types.AsyncGpuResult.html#nvmolkit.types.AsyncGpuResult">AsyncGpuResult (class in nvmolkit.types)</a>
 </li>
   </ul></td>
@@ -354,6 +409,12 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.best_config">best_config (nvmolkit.autotune.TuneResult attribute)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.best_params">best_params (nvmolkit.autotune.TuneResult attribute)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.best_throughput">best_throughput (nvmolkit.autotune.TuneResult attribute)</a>
+</li>
       <li><a href="api/generated/nvmolkit.clustering.butina.html#nvmolkit.clustering.butina">butina() (in module nvmolkit.clustering)</a>
 </li>
   </ul></td>
@@ -362,12 +423,26 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.calibration_size">calibration_size (nvmolkit.autotune.TuneResult attribute)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield.compute_energy">compute_energy() (nvmolkit.batchedForcefield.MMFFBatchedForcefield method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield.compute_energy">(nvmolkit.batchedForcefield.UFFBatchedForcefield method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield.compute_gradients">compute_gradients() (nvmolkit.batchedForcefield.MMFFBatchedForcefield method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield.compute_gradients">(nvmolkit.batchedForcefield.UFFBatchedForcefield method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/generated/nvmolkit.substructure.countSubstructMatches.html#nvmolkit.substructure.countSubstructMatches">countSubstructMatches() (in module nvmolkit.substructure)</a>
 </li>
       <li><a href="api/generated/nvmolkit.similarity.crossCosineSimilarity.html#nvmolkit.similarity.crossCosineSimilarity">crossCosineSimilarity() (in module nvmolkit.similarity)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/generated/nvmolkit.similarity.crossCosineSimilarityMemoryConstrained.html#nvmolkit.similarity.crossCosineSimilarityMemoryConstrained">crossCosineSimilarityMemoryConstrained() (in module nvmolkit.similarity)</a>
 </li>
       <li><a href="api/generated/nvmolkit.similarity.crossTanimotoSimilarity.html#nvmolkit.similarity.crossTanimotoSimilarity">crossTanimotoSimilarity() (in module nvmolkit.similarity)</a>
@@ -393,16 +468,36 @@
   </ul></td>
 </tr></table>
 
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.from_dict">from_dict() (nvmolkit.substructure.SubstructSearchConfig class method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.types.HardwareOptions.html#nvmolkit.types.HardwareOptions.from_dict">(nvmolkit.types.HardwareOptions class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/generated/nvmolkit.substructure.SubstructMatchResults.html#nvmolkit.substructure.SubstructMatchResults.get_pair">get_pair() (nvmolkit.substructure.SubstructMatchResults method)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.conformerRmsd.GetConformerRMSMatrix.html#nvmolkit.conformerRmsd.GetConformerRMSMatrix">GetConformerRMSMatrix() (in module nvmolkit.conformerRmsd)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.conformerRmsd.GetConformerRMSMatrixBatch.html#nvmolkit.conformerRmsd.GetConformerRMSMatrixBatch">GetConformerRMSMatrixBatch() (in module nvmolkit.conformerRmsd)</a>
 </li>
       <li><a href="api/generated/nvmolkit.fingerprints.MorganFingerprintGenerator.html#nvmolkit.fingerprints.MorganFingerprintGenerator.GetFingerprints">GetFingerprints() (nvmolkit.fingerprints.MorganFingerprintGenerator method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/generated/nvmolkit.substructure.getSubstructMatches.html#nvmolkit.substructure.getSubstructMatches">getSubstructMatches() (in module nvmolkit.substructure)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.tfd.GetTFDMatrices.html#nvmolkit.tfd.GetTFDMatrices">GetTFDMatrices() (in module nvmolkit.tfd)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.tfd.GetTFDMatrix.html#nvmolkit.tfd.GetTFDMatrix">GetTFDMatrix() (in module nvmolkit.tfd)</a>
 </li>
       <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.gpuIds">gpuIds (nvmolkit.substructure.SubstructSearchConfig property)</a>
 
@@ -425,15 +520,41 @@
   </ul></td>
 </tr></table>
 
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.autotune.is_available.html#nvmolkit.autotune.is_available">is_available() (in module nvmolkit.autotune)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.autotune.load.html#nvmolkit.autotune.load">load() (in module nvmolkit.autotune)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.maxMatches">maxMatches (nvmolkit.substructure.SubstructSearchConfig property)</a>
 </li>
-      <li><a href="api/generated/nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs.html#nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs">MMFFOptimizeMoleculesConfs() (in module nvmolkit.mmffOptimization)</a>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield.minimize">minimize() (nvmolkit.batchedForcefield.MMFFBatchedForcefield method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield.minimize">(nvmolkit.batchedForcefield.UFFBatchedForcefield method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield">MMFFBatchedForcefield (class in nvmolkit.batchedForcefield)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement">MMFFBatchElement (class in nvmolkit.batchedForcefield)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs.html#nvmolkit.mmffOptimization.MMFFOptimizeMoleculesConfs">MMFFOptimizeMoleculesConfs() (in module nvmolkit.mmffOptimization)</a>
+</li>
       <li>
     module
 
@@ -449,10 +570,18 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/generated/nvmolkit.types.AsyncGpuResult.html#nvmolkit.types.AsyncGpuResult.numpy">numpy() (nvmolkit.types.AsyncGpuResult method)</a>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.n_trials_run">n_trials_run (nvmolkit.autotune.TuneResult attribute)</a>
 </li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchElement.html#nvmolkit.batchedForcefield.MMFFBatchElement.num_atoms">num_atoms (nvmolkit.batchedForcefield.MMFFBatchElement property)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement.num_atoms">(nvmolkit.batchedForcefield.UFFBatchElement property)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.types.AsyncGpuResult.html#nvmolkit.types.AsyncGpuResult.numpy">numpy() (nvmolkit.types.AsyncGpuResult method)</a>
+</li>
       <li>
     nvmolkit
 
@@ -479,13 +608,29 @@
   </ul></td>
 </tr></table>
 
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.MMFFBatchedForcefield.html#nvmolkit.batchedForcefield.MMFFBatchedForcefield.rebuild">rebuild() (nvmolkit.batchedForcefield.MMFFBatchedForcefield method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield.rebuild">(nvmolkit.batchedForcefield.UFFBatchedForcefield method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/generated/nvmolkit.substructure.SubstructMatchResults.html#nvmolkit.substructure.SubstructMatchResults">SubstructMatchResults (class in nvmolkit.substructure)</a>
+      <li><a href="api/generated/nvmolkit.autotune.save.html#nvmolkit.autotune.save">save() (in module nvmolkit.autotune)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult.study">study (nvmolkit.autotune.TuneResult attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.substructure.SubstructMatchResults.html#nvmolkit.substructure.SubstructMatchResults">SubstructMatchResults (class in nvmolkit.substructure)</a>
+</li>
       <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig">SubstructSearchConfig (class in nvmolkit.substructure)</a>
 </li>
   </ul></td>
@@ -494,7 +639,27 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.to_dict">to_dict() (nvmolkit.substructure.SubstructSearchConfig method)</a>
+
+      <ul>
+        <li><a href="api/generated/nvmolkit.types.HardwareOptions.html#nvmolkit.types.HardwareOptions.to_dict">(nvmolkit.types.HardwareOptions method)</a>
+</li>
+      </ul></li>
       <li><a href="api/generated/nvmolkit.types.AsyncGpuResult.html#nvmolkit.types.AsyncGpuResult.torch">torch() (nvmolkit.types.AsyncGpuResult method)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.tune_batched_forcefield.html#nvmolkit.autotune.tune_batched_forcefield">tune_batched_forcefield() (in module nvmolkit.autotune)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.autotune.tune_embed_molecules.html#nvmolkit.autotune.tune_embed_molecules">tune_embed_molecules() (in module nvmolkit.autotune)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.tune_mmff_optimize.html#nvmolkit.autotune.tune_mmff_optimize">tune_mmff_optimize() (in module nvmolkit.autotune)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.tune_substructure.html#nvmolkit.autotune.tune_substructure">tune_substructure() (in module nvmolkit.autotune)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.tune_uff_optimize.html#nvmolkit.autotune.tune_uff_optimize">tune_uff_optimize() (in module nvmolkit.autotune)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.autotune.TuneResult.html#nvmolkit.autotune.TuneResult">TuneResult (class in nvmolkit.autotune)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -502,10 +667,16 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.uniquify">uniquify (nvmolkit.substructure.SubstructSearchConfig property)</a>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchedForcefield.html#nvmolkit.batchedForcefield.UFFBatchedForcefield">UFFBatchedForcefield (class in nvmolkit.batchedForcefield)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.batchedForcefield.UFFBatchElement.html#nvmolkit.batchedForcefield.UFFBatchElement">UFFBatchElement (class in nvmolkit.batchedForcefield)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/nvmolkit.uffOptimization.UFFOptimizeMoleculesConfs.html#nvmolkit.uffOptimization.UFFOptimizeMoleculesConfs">UFFOptimizeMoleculesConfs() (in module nvmolkit.uffOptimization)</a>
+</li>
+      <li><a href="api/generated/nvmolkit.substructure.SubstructSearchConfig.html#nvmolkit.substructure.SubstructSearchConfig.uniquify">uniquify (nvmolkit.substructure.SubstructSearchConfig property)</a>
+</li>
       <li><a href="api/generated/nvmolkit.fingerprints.unpack_fingerprint.html#nvmolkit.fingerprints.unpack_fingerprint">unpack_fingerprint (class in nvmolkit.fingerprints)</a>
 </li>
   </ul></td>
