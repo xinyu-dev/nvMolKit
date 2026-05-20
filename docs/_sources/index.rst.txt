@@ -88,6 +88,38 @@ To install with conda, run::
     conda install -c conda-forge nvmolkit
 
 
+Pip Installation
+^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    pip install nvmolkit
+
+The wheel published to PyPI is built against a single RDKit release per
+nvMolKit version (RDKit 2026.03.1 for nvMolKit v0.5.0), due to versioning
+limitations in PyPI's dependency management system.
+
+Use this path if you do not have a constraint on which RDKit version to use;
+pip will pull a compatible RDKit from PyPI alongside nvMolKit.
+
+RDKit-pinned variants
+"""""""""""""""""""""
+
+For projects that need to use a specific RDKit version, per-variant wheels are
+hosted on github.
+
+To install nvMolKit pinned to a particular RDKit:
+
+.. code-block:: bash
+
+    RDKIT_VERSION=2025.9.6
+    NVMOLKIT_VERSION=0.5.0
+    pip install nvmolkit==${NVMOLKIT_VERSION}+rdkit${RDKIT_VERSION} \
+        --extra-index-url https://nvidia-digital-bio.github.io/nvMolKit/wheels/rdkit${RDKIT_VERSION}/simple/
+
+Replace ``2025.9.6`` with the RDKit version you want. Variants published for
+nvMolKit v0.5.0 include every version between 2025.03.6 and 2026.03.1.
+
 
 From Source
 ^^^^^^^^^^^
