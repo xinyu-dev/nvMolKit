@@ -16,3 +16,5 @@ docs/public/*
 docs/api/generated/*
 .gitattributes
 *ipynb_checkpoints*
+# Local-only skill evaluation tracker (not committed)
+nvmolkit-skill-eval.md
